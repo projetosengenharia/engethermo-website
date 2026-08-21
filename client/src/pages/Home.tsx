@@ -786,6 +786,19 @@ export default function Home() {
               </Link>
             </div>
           </div>
+
+          {/* Credit */}
+          <p className="text-xs text-gray-600">
+            Criado por{' '}
+            <a
+              href="https://vanessasilvapro.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gray-400 transition-colors underline underline-offset-2"
+            >
+              Vanessa Silva
+            </a>
+          </p>
         </div>
       </footer>
 
