@@ -230,6 +230,33 @@ const mainServices = [
   'Manutenção em subestações',
 ];
 
+const faqs = [
+  {
+    question: 'Quais serviços a Engethermo Engenharia oferece?',
+    answer: 'Atuamos em engenharia elétrica, civil e mecânica: instalações elétricas e cabeamento estruturado, quadros e painéis elétricos, ar condicionado e ventilação, instalações hidráulicas, sistemas industriais de refrigeração, termografia e manutenção preventiva, corretiva e emergencial.',
+  },
+  {
+    question: 'Em quais regiões vocês atendem?',
+    answer: 'Somos sediados em Londrina - PR e atendemos a cidade e região.',
+  },
+  {
+    question: 'Vocês atendem chamados de emergência?',
+    answer: 'Sim, oferecemos atendimento emergencial 24h dentro dos nossos contratos de manutenção preventiva e corretiva.',
+  },
+  {
+    question: 'Vocês atendem residências, comércios e indústrias?',
+    answer: 'Sim. Atendemos clientes residenciais, comerciais e industriais, adequando cada projeto às necessidades específicas do local.',
+  },
+  {
+    question: 'O que é termografia e para que serve?',
+    answer: 'É um diagnóstico térmico que identifica pontos quentes, sobrecargas e falhas em instalações elétricas e equipamentos industriais antes que se tornem problemas graves. Emitimos laudos técnicos detalhados com recomendações de ação.',
+  },
+  {
+    question: 'Como solicito um orçamento?',
+    answer: 'Clique no botão "Solicitar Orçamento" no topo do site — você será direcionado para o nosso WhatsApp e falará diretamente com a equipe.',
+  },
+];
+
 const stats = [
   { icon: <Award className="w-5 h-5" />, value: '+10', label: 'Anos de Experiência' },
   { icon: <Users className="w-5 h-5" />, value: '+100', label: 'Projetos Entregues' },
@@ -243,6 +270,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -699,6 +727,55 @@ export default function Home() {
                 <p className="text-gray-300 text-sm leading-relaxed pt-1">{service}</p>
               </motion.div>
             ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section id="faq" className="py-24 bg-[#141414]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <AnimateOnScroll variants={fadeUp} className="text-center mb-16">
+            <p className="text-red-500 text-xs font-bold uppercase tracking-widest mb-3">Dúvidas</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white">Perguntas Frequentes</h2>
+            <div className="mt-4 w-16 h-1 bg-red-600 mx-auto rounded" />
+          </AnimateOnScroll>
+
+          <motion.div
+            className="space-y-3"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-40px 0px' }}
+          >
+            {faqs.map((faq, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <motion.div
+                  key={idx}
+                  variants={staggerItem}
+                  className="rounded-lg bg-[#1d1c1e] border border-white/5 overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="w-full flex items-center justify-between gap-4 p-5 text-left"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="font-semibold text-white text-sm sm:text-base">{faq.question}</span>
+                    {isOpen ? (
+                      <ChevronUp className="w-5 h-5 text-red-500 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-gray-500 flex-shrink-0" />
+                    )}
+                  </button>
+                  {isOpen && (
+                    <div className="px-5 pb-5 text-gray-400 text-sm leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>
