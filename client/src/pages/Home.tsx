@@ -864,20 +864,20 @@ export default function Home() {
           <div className="w-full border-t border-white/5" />
 
           {/* Bottom row */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full text-xs text-gray-500">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full text-xs text-gray-400">
             <p>&copy; 2026 Engethermo Engenharia. Todos os direitos reservados.</p>
-            <span className="hidden sm:block text-gray-700">|</span>
+            <span className="hidden sm:block text-gray-600">|</span>
             <div className="flex items-center gap-4">
               <Link
                 href="/privacidade"
-                className="hover:text-gray-400 transition-colors"
+                className="hover:text-gray-300 transition-colors"
               >
                 Políticas de Privacidade
               </Link>
-              <span className="text-gray-700">·</span>
+              <span className="text-gray-600">·</span>
               <Link
                 href="/termos"
-                className="hover:text-gray-400 transition-colors"
+                className="hover:text-gray-300 transition-colors"
               >
                 Termos e Condições
               </Link>
@@ -885,13 +885,13 @@ export default function Home() {
           </div>
 
           {/* Credit */}
-          <p className="text-xs text-gray-600">
+          <p className="text-xs text-gray-400">
             Criado por{' '}
             <a
               href="https://vanessasilvapro.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-400 transition-colors underline underline-offset-2"
+              className="hover:text-gray-300 transition-colors underline underline-offset-2"
             >
               Vanessa Silva
             </a>
