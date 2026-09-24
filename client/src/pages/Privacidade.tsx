@@ -1,11 +1,16 @@
 import { useEffect } from 'react';
 import { Link } from 'wouter';
+import { setPageMeta } from '@/lib/utils';
 
 const LOGO_URL = '/images/logo-transparent_ec5447bc.jpeg';
 
 export default function Privacidade() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    setPageMeta(
+      'Política de Privacidade - ENGETHERMO ENGENHARIA',
+      'Política de Privacidade da ENGETHERMO Engenharia: como tratamos os dados de quem visita nosso site.'
+    );
   }, []);
 
   return (

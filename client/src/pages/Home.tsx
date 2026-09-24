@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'wouter';
 import { Menu, X, MessageCircle, Zap, Wrench, Wind, Droplets, Thermometer, Settings, ChevronDown, ChevronUp, Award, Clock, Users, Shield } from 'lucide-react';
 import { motion, useInView, useAnimation, type Variants } from 'framer-motion';
+import { setPageMeta } from '@/lib/utils';
 
 const WHATSAPP_NUMBER = '5543984111736';
 const WHATSAPP_MESSAGE = 'Olá, vim do site';
@@ -243,6 +244,13 @@ export default function Home() {
   const [activeSection, setActiveSection] = useState('home');
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
   const navRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setPageMeta(
+      'ENGETHERMO ENGENHARIA - Engenharia Elétrica, Civil e Mecânica',
+      'Projetos, instalações e manutenção em engenharia elétrica, civil e mecânica'
+    );
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {

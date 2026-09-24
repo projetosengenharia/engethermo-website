@@ -1,11 +1,16 @@
 import { useEffect } from 'react';
 import { Link } from 'wouter';
+import { setPageMeta } from '@/lib/utils';
 
 const LOGO_URL = '/images/logo-transparent_ec5447bc.jpeg';
 
 export default function Termos() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    setPageMeta(
+      'Termos e Condições - ENGETHERMO ENGENHARIA',
+      'Termos e Condições de uso do site da ENGETHERMO Engenharia.'
+    );
   }, []);
 
   return (
