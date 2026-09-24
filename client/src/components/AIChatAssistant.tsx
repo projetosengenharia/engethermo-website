@@ -6,6 +6,7 @@ const ChatMessageContent = lazy(() => import('./ChatMessageContent'));
 const WHATSAPP_NUMBER = '5543984111736';
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
 const ICON_URL = '/images/icon-et-cropped_9f642670.webp';
+const ICON_URL_1X = '/images/icon-et-cropped_9f642670-1x.webp';
 
 interface Message {
   id: string;
@@ -110,7 +111,8 @@ export default function AIChatAssistant() {
             <div className="flex items-center gap-3">
               <div className="w-11 h-11 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <img
-                  src={ICON_URL}
+                  src={ICON_URL_1X}
+                  srcSet={`${ICON_URL_1X} 1x, ${ICON_URL} 2x`}
                   alt="ENGETHERMO"
                   className="w-9 h-9 object-contain"
                 />

@@ -14,6 +14,9 @@ const getWhatsAppLink = (message?: string) => {
 
 const WHATSAPP_LINK = getWhatsAppLink();
 const LOGO_URL = '/images/logo-transparent-cropped_f9d9bb46.webp';
+const LOGO_URL_1X = '/images/logo-transparent-cropped_f9d9bb46-1x.webp';
+
+const srcSet1x2x = (url: string) => `${url.replace('.webp', '-1x.webp')} 1x, ${url} 2x`;
 
 // ── Animation variants ──────────────────────────────────────────────────────
 
@@ -317,7 +320,13 @@ export default function Home() {
 
           {/* Logo */}
           <button onClick={() => scrollToSection('home')} className="flex-shrink-0 group">
-            <img src={LOGO_URL} alt="ENGETHERMO" fetchPriority="high" className="h-[155px] w-auto object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-105" />
+            <img
+              src={LOGO_URL_1X}
+              srcSet={srcSet1x2x(LOGO_URL)}
+              alt="ENGETHERMO"
+              fetchPriority="high"
+              className="h-[155px] w-auto object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-105"
+            />
           </button>
 
           {/* Desktop Links */}
@@ -548,12 +557,14 @@ export default function Home() {
             <AnimateOnScroll variants={fadeRight}>
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="/images/about-elec-orig_570a76e2.webp"
+                  src="/images/about-elec-orig_570a76e2-1x.webp"
+                  srcSet={srcSet1x2x('/images/about-elec-orig_570a76e2.webp')}
                   alt="Instalação Elétrica"
                   className="rounded-xl shadow-2xl w-full h-52 object-cover"
                 />
                 <img
-                  src="/images/about-hvac-orig_f3123e1b.webp"
+                  src="/images/about-hvac-orig_f3123e1b-1x.webp"
+                  srcSet={srcSet1x2x('/images/about-hvac-orig_f3123e1b.webp')}
                   alt="HVAC Systems"
                   className="rounded-xl shadow-2xl w-full h-52 object-cover mt-8"
                 />
@@ -631,7 +642,8 @@ export default function Home() {
                   {/* Image */}
                   <div className="relative h-44 overflow-hidden">
                     <img
-                      src={area.image}
+                      src={area.image.replace('.webp', '-1x.webp')}
+                      srcSet={srcSet1x2x(area.image)}
                       alt={area.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
@@ -820,7 +832,7 @@ export default function Home() {
           {/* Logo + tagline */}
           <AnimateOnScroll variants={fadeUp}>
             <div className="flex flex-col items-center gap-2">
-              <img src={LOGO_URL} alt="ENGETHERMO" className="h-20 object-contain" />
+              <img src={LOGO_URL_1X} alt="ENGETHERMO" className="h-20 object-contain" />
               <p className="text-gray-500 text-xs tracking-wider">Engenharia de Excelência - Londrina, PR</p>
             </div>
           </AnimateOnScroll>
