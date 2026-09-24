@@ -42,7 +42,7 @@ export default function CookieBanner() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         {/* Texto */}
         <div className="flex items-start gap-3 flex-1">
-          <img src="/images/icon-et-cropped_9f642670.png" alt="Engethermo" className="w-8 h-8 object-contain flex-shrink-0 mt-0.5" />
+          <img src="/images/icon-et-cropped_9f642670.webp" alt="Engethermo" className="w-8 h-8 object-contain flex-shrink-0 mt-0.5" />
           <p className="text-sm text-gray-300 leading-relaxed">
             Utilizamos cookies para melhorar sua experiência no site, personalizar conteúdo e analisar nosso tráfego.
             Ao continuar navegando, você concorda com nossa{" "}

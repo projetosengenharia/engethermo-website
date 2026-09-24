@@ -12,7 +12,7 @@ const getWhatsAppLink = (message?: string) => {
 };
 
 const WHATSAPP_LINK = getWhatsAppLink();
-const LOGO_URL = '/images/logo-transparent-cropped_f9d9bb46.png';
+const LOGO_URL = '/images/logo-transparent-cropped_f9d9bb46.webp';
 
 // ── Animation variants ──────────────────────────────────────────────────────
 
@@ -146,7 +146,7 @@ const serviceAreas: ServiceArea[] = [
     icon: <Thermometer className="w-6 h-6" />,
     description: 'Diagnóstico térmico de instalações e equipamentos',
     items: ['Inspeção Térmica', 'Diagnóstico Preditivo', 'Relatórios Técnicos'],
-    image: '/images/thermo-orig_7741f000.jpg',
+    image: '/images/thermo-orig_7741f000.webp',
     detail: 'Realizamos inspeções termográficas em instalações elétricas e equipamentos industriais para identificar pontos quentes, sobrecargas e falhas antes que se tornem problemas graves. Emitimos laudos técnicos detalhados com recomendações de ação.',
   },
   {
@@ -155,7 +155,7 @@ const serviceAreas: ServiceArea[] = [
     icon: <Settings className="w-6 h-6" />,
     description: 'Sistemas de refrigeração, água gelada e etileno glicol',
     items: ['Sistema de Água Gelada', 'Sistema Self', 'Etileno Glicol'],
-    image: '/images/chiller-orig_70e1a803.png',
+    image: '/images/chiller-orig_70e1a803.webp',
     detail: 'Especializados em sistemas industriais de refrigeração de alta performance. Oferecemos instalação e manutenção de sistemas de água gelada com chiller parafuso, sistemas self-contained e soluções com etileno glicol para linhas de produção. Garantimos eficiência energética e confiabilidade operacional.',
   },
   {
@@ -164,7 +164,7 @@ const serviceAreas: ServiceArea[] = [
     icon: <Zap className="w-6 h-6" />,
     description: 'Cabeamento estruturado e alimentação elétrica de alta qualidade',
     items: ['Voz', 'Dados', 'Alimentação Elétrica'],
-    image: '/images/electrical-install-orig_3bc2c832.jpg',
+    image: '/images/electrical-install-orig_3bc2c832.webp',
     detail: 'Projetamos e executamos instalações elétricas completas para ambientes prediais, comerciais e industriais. Utilizamos materiais certificados e seguimos rigorosamente as normas ABNT, garantindo segurança, eficiência e durabilidade em cada projeto.',
   },
   {
@@ -173,7 +173,7 @@ const serviceAreas: ServiceArea[] = [
     icon: <Settings className="w-6 h-6" />,
     description: 'Montagem e instalação de painéis elétricos de alta precisão',
     items: ['Painéis de Subestacão', 'Montagem de Subestacão', 'Projetos em Geral'],
-    image: '/images/electrical-panel-orig_39359331.jpg',
+    image: '/images/electrical-panel-orig_39359331.webp',
     detail: 'Realizamos a montagem e instalação de quadros e painéis elétricos para subestacões e sistemas de distribuição de energia. Nossa equipe técnica garante precisão na montagem e total conformidade com as normas técnicas vigentes.',
   },
   {
@@ -182,7 +182,7 @@ const serviceAreas: ServiceArea[] = [
     icon: <Wind className="w-6 h-6" />,
     description: 'Instalação e manutenção de sistemas de climatização',
     items: ['Ar Condicionado', 'Ventilação', 'Exaustão'],
-    image: '/images/hvac-orig_68a2d974.jpg',
+    image: '/images/hvac-orig_68a2d974.webp',
     detail: 'Instalamos e realizamos manutenção preventiva e corretiva de sistemas de ar condicionado, ventilação e exaustão para ambientes residenciais, comerciais e industriais. Trabalhamos com as principais marcas do mercado.',
   },
   {
@@ -191,7 +191,7 @@ const serviceAreas: ServiceArea[] = [
     icon: <Droplets className="w-6 h-6" />,
     description: 'Obras civis e reformas com sistemas hidráulicos completos',
     items: ['Obras Civis', 'Reformas', 'Manutenção Hidráulica'],
-    image: '/images/hydraulic-orig_f1bb2c67.jpg',
+    image: '/images/hydraulic-orig_f1bb2c67.webp',
     detail: 'Executamos instalações hidrossanitárias completas para obras novas e reformas. Nossa equipe atende projetos prediais, comerciais e industriais com qualidade técnica e agilidade, garantindo o perfeito funcionamento de todos os sistemas.',
   },
   {
@@ -200,7 +200,7 @@ const serviceAreas: ServiceArea[] = [
     icon: <Wrench className="w-6 h-6" />,
     description: 'Contratos de manutenção para instalações elétricas e hidráulicas',
     items: ['Prediais', 'Comerciais', 'Industriais'],
-    image: '/images/generator-orig_d57a7202.jpg',
+    image: '/images/generator-orig_d57a7202.webp',
     detail: 'Oferecemos contratos de manutenção preventiva, corretiva e emergencial para instalações elétricas, hidrossanitárias, ar condicionado, refrigeração, bombas e equipamentos industriais. Garantimos disponibilidade e confiabilidade para sua operação.',
   },
   {
@@ -209,7 +209,7 @@ const serviceAreas: ServiceArea[] = [
     icon: <Zap className="w-6 h-6" />,
     description: 'Redes de dados, voz e CFTV para ambientes corporativos',
     items: ['Rede Lógica', 'Fibra Óptica', 'CFTV'],
-    image: '/images/cabling-orig_23df1e00.jpg',
+    image: '/images/cabling-orig_23df1e00.webp',
     detail: 'Projetamos e instalamos infraestrutura de cabeamento estruturado metálico e óptico para redes de dados, voz e CFTV. Atendemos empresas que buscam conectividade de alta performance e confiabilidade em suas operações.',
   },
 ];
@@ -281,7 +281,7 @@ export default function Home() {
 
           {/* Logo */}
           <button onClick={() => scrollToSection('home')} className="flex-shrink-0 group">
-            <img src={LOGO_URL} alt="ENGETHERMO" className="h-[155px] w-auto object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-105" />
+            <img src={LOGO_URL} alt="ENGETHERMO" fetchPriority="high" className="h-[155px] w-auto object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-105" />
           </button>
 
           {/* Desktop Links */}
@@ -512,7 +512,7 @@ export default function Home() {
             <AnimateOnScroll variants={fadeRight}>
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="/images/about-elec-orig_570a76e2.jpg"
+                  src="/images/about-elec-orig_570a76e2.webp"
                   alt="Instalação Elétrica"
                   className="rounded-xl shadow-2xl w-full h-52 object-cover"
                 />

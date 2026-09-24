@@ -4,7 +4,7 @@ import { Streamdown } from 'streamdown';
 
 const WHATSAPP_NUMBER = '5543984111736';
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
-const ICON_URL = '/images/icon-et-cropped_9f642670.png';
+const ICON_URL = '/images/icon-et-cropped_9f642670.webp';
 
 interface Message {
   id: string;
