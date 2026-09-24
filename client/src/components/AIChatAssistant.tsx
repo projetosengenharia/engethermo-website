@@ -1,6 +1,7 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, lazy, Suspense } from 'react';
 import { MessageCircle, X, Send, Loader } from 'lucide-react';
-import { Streamdown } from 'streamdown';
+
+const ChatMessageContent = lazy(() => import('./ChatMessageContent'));
 
 const WHATSAPP_NUMBER = '5543984111736';
 const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}`;
@@ -146,7 +147,9 @@ export default function AIChatAssistant() {
                 >
                   {message.role === 'assistant' ? (
                     <div className="chat-message-content">
-                      <Streamdown>{message.content as string}</Streamdown>
+                      <Suspense fallback={<p className="text-[12.5px] leading-relaxed">{message.content}</p>}>
+                        <ChatMessageContent content={message.content} />
+                      </Suspense>
                     </div>
                   ) : (
                     <p className="text-[12.5px] leading-relaxed">{message.content}</p>
