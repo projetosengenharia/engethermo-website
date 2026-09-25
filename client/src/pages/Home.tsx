@@ -886,14 +886,13 @@ export default function Home() {
 
           {/* Credit */}
           <p className="text-xs text-gray-400">
-            Criado por{' '}
             <a
-              href="https://vanessasilvapro.com/"
+              href="https://velaxvx.com"
               target="_blank"
-              rel="noopener noreferrer"
+              rel="nofollow noopener"
               className="hover:text-gray-300 transition-colors underline underline-offset-2"
             >
-              Vanessa Silva
+              Feito por Velax Tecnologia & IA
             </a>
           </p>
         </div>
