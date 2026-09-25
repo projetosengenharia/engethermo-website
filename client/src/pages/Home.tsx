@@ -140,6 +140,8 @@ interface ServiceArea {
   description: string;
   items: string[];
   image: string;
+  imageWidth: number;
+  imageHeight: number;
   detail: string;
 }
 
@@ -151,6 +153,8 @@ const serviceAreas: ServiceArea[] = [
     description: 'Diagnóstico térmico de instalações e equipamentos',
     items: ['Inspeção Térmica', 'Diagnóstico Preditivo', 'Relatórios Técnicos'],
     image: '/images/thermo-orig_7741f000.webp',
+    imageWidth: 387,
+    imageHeight: 182,
     detail: 'Realizamos inspeções termográficas em instalações elétricas e equipamentos industriais para identificar pontos quentes, sobrecargas e falhas antes que se tornem problemas graves. Emitimos laudos técnicos detalhados com recomendações de ação.',
   },
   {
@@ -160,6 +164,8 @@ const serviceAreas: ServiceArea[] = [
     description: 'Sistemas de refrigeração, água gelada e etileno glicol',
     items: ['Sistema de Água Gelada', 'Sistema Self', 'Etileno Glicol'],
     image: '/images/chiller-orig_70e1a803.webp',
+    imageWidth: 387,
+    imageHeight: 289,
     detail: 'Especializados em sistemas industriais de refrigeração de alta performance. Oferecemos instalação e manutenção de sistemas de água gelada com chiller parafuso, sistemas self-contained e soluções com etileno glicol para linhas de produção. Garantimos eficiência energética e confiabilidade operacional.',
   },
   {
@@ -169,6 +175,8 @@ const serviceAreas: ServiceArea[] = [
     description: 'Cabeamento estruturado e alimentação elétrica de alta qualidade',
     items: ['Voz', 'Dados', 'Alimentação Elétrica'],
     image: '/images/electrical-install-orig_3bc2c832.webp',
+    imageWidth: 387,
+    imageHeight: 305,
     detail: 'Projetamos e executamos instalações elétricas completas para ambientes prediais, comerciais e industriais. Utilizamos materiais certificados e seguimos rigorosamente as normas ABNT, garantindo segurança, eficiência e durabilidade em cada projeto.',
   },
   {
@@ -178,6 +186,8 @@ const serviceAreas: ServiceArea[] = [
     description: 'Montagem e instalação de painéis elétricos de alta precisão',
     items: ['Painéis de Subestacão', 'Montagem de Subestacão', 'Projetos em Geral'],
     image: '/images/electrical-panel-orig_39359331.webp',
+    imageWidth: 387,
+    imageHeight: 293,
     detail: 'Realizamos a montagem e instalação de quadros e painéis elétricos para subestacões e sistemas de distribuição de energia. Nossa equipe técnica garante precisão na montagem e total conformidade com as normas técnicas vigentes.',
   },
   {
@@ -187,6 +197,8 @@ const serviceAreas: ServiceArea[] = [
     description: 'Instalação e manutenção de sistemas de climatização',
     items: ['Ar Condicionado', 'Ventilação', 'Exaustão'],
     image: '/images/hvac-orig_68a2d974.webp',
+    imageWidth: 387,
+    imageHeight: 258,
     detail: 'Instalamos e realizamos manutenção preventiva e corretiva de sistemas de ar condicionado, ventilação e exaustão para ambientes residenciais, comerciais e industriais. Trabalhamos com as principais marcas do mercado.',
   },
   {
@@ -196,6 +208,8 @@ const serviceAreas: ServiceArea[] = [
     description: 'Obras civis e reformas com sistemas hidráulicos completos',
     items: ['Obras Civis', 'Reformas', 'Manutenção Hidráulica'],
     image: '/images/hydraulic-orig_f1bb2c67.webp',
+    imageWidth: 387,
+    imageHeight: 258,
     detail: 'Executamos instalações hidrossanitárias completas para obras novas e reformas. Nossa equipe atende projetos prediais, comerciais e industriais com qualidade técnica e agilidade, garantindo o perfeito funcionamento de todos os sistemas.',
   },
   {
@@ -205,6 +219,8 @@ const serviceAreas: ServiceArea[] = [
     description: 'Contratos de manutenção para instalações elétricas e hidráulicas',
     items: ['Prediais', 'Comerciais', 'Industriais'],
     image: '/images/generator-orig_d57a7202.webp',
+    imageWidth: 387,
+    imageHeight: 484,
     detail: 'Oferecemos contratos de manutenção preventiva, corretiva e emergencial para instalações elétricas, hidrossanitárias, ar condicionado, refrigeração, bombas e equipamentos industriais. Garantimos disponibilidade e confiabilidade para sua operação.',
   },
   {
@@ -214,6 +230,8 @@ const serviceAreas: ServiceArea[] = [
     description: 'Redes de dados, voz e CFTV para ambientes corporativos',
     items: ['Rede Lógica', 'Fibra Óptica', 'CFTV'],
     image: '/images/cabling-orig_23df1e00.webp',
+    imageWidth: 387,
+    imageHeight: 290,
     detail: 'Projetamos e instalamos infraestrutura de cabeamento estruturado metálico e óptico para redes de dados, voz e CFTV. Atendemos empresas que buscam conectividade de alta performance e confiabilidade em suas operações.',
   },
 ];
@@ -325,6 +343,8 @@ export default function Home() {
               srcSet={srcSet1x2x(LOGO_URL)}
               alt="ENGETHERMO"
               fetchPriority="high"
+              width={251}
+              height={155}
               className="h-[155px] w-auto object-contain drop-shadow-2xl transition-transform duration-300 group-hover:scale-105"
             />
           </button>
@@ -560,12 +580,16 @@ export default function Home() {
                   src="/images/about-elec-orig_570a76e2-1x.webp"
                   srcSet={srcSet1x2x('/images/about-elec-orig_570a76e2.webp')}
                   alt="Instalação Elétrica"
+                  width={370}
+                  height={247}
                   className="rounded-xl shadow-2xl w-full h-52 object-cover"
                 />
                 <img
                   src="/images/about-hvac-orig_f3123e1b-1x.webp"
                   srcSet={srcSet1x2x('/images/about-hvac-orig_f3123e1b.webp')}
                   alt="HVAC Systems"
+                  width={370}
+                  height={208}
                   className="rounded-xl shadow-2xl w-full h-52 object-cover mt-8"
                 />
               </div>
@@ -645,6 +669,8 @@ export default function Home() {
                       src={area.image.replace('.webp', '-1x.webp')}
                       srcSet={srcSet1x2x(area.image)}
                       alt={area.title}
+                      width={area.imageWidth}
+                      height={area.imageHeight}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1d1c1e] via-[#1d1c1e]/40 to-transparent" />
@@ -832,7 +858,7 @@ export default function Home() {
           {/* Logo + tagline */}
           <AnimateOnScroll variants={fadeUp}>
             <div className="flex flex-col items-center gap-2">
-              <img src={LOGO_URL_1X} alt="ENGETHERMO" className="h-20 object-contain" />
+              <img src={LOGO_URL_1X} alt="ENGETHERMO" width={251} height={155} className="h-20 object-contain" />
               <p className="text-gray-500 text-xs tracking-wider">Engenharia de Excelência - Londrina, PR</p>
             </div>
           </AnimateOnScroll>

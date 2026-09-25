@@ -114,6 +114,8 @@ export default function AIChatAssistant() {
                   src={ICON_URL_1X}
                   srcSet={`${ICON_URL_1X} 1x, ${ICON_URL} 2x`}
                   alt="ENGETHERMO"
+                  width={32}
+                  height={33}
                   className="w-9 h-9 object-contain"
                 />
               </div>

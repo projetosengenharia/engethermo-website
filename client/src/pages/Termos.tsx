@@ -19,7 +19,7 @@ export default function Termos() {
       <header className="bg-[#1d1c1e]/97 border-b border-white/5 shadow-2xl sticky top-0 z-50">
         <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/">
-            <img src={LOGO_URL} alt="ENGETHERMO" className="h-16 w-auto object-contain cursor-pointer" />
+            <img src={LOGO_URL} alt="ENGETHERMO" width={1280} height={853} className="h-16 w-auto object-contain cursor-pointer" />
           </Link>
           <Link href="/" className="text-sm text-gray-400 hover:text-red-500 transition-colors duration-200">
             ← Voltar ao site

@@ -46,6 +46,8 @@ export default function CookieBanner() {
             src="/images/icon-et-cropped_9f642670-1x.webp"
             srcSet="/images/icon-et-cropped_9f642670-1x.webp 1x, /images/icon-et-cropped_9f642670.webp 2x"
             alt="Engethermo"
+            width={32}
+            height={33}
             className="w-8 h-8 object-contain flex-shrink-0 mt-0.5"
           />
           <p className="text-sm text-gray-300 leading-relaxed">
