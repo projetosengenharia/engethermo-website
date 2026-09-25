@@ -301,16 +301,25 @@ export default function Home() {
     );
   }, []);
 
+  // Height of the fixed top bar only (excludes the mobile dropdown when it is open).
+  const navBarHeight = () =>
+    (navRef.current?.firstElementChild as HTMLElement | null)?.offsetHeight ?? 0;
+
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navLinks.map((l) => l.id);
-      for (const id of [...sections].reverse()) {
+      // Pick the section closest above the viewport top by its position on the page,
+      // not by menu order (e.g. "Áreas" sits above "Serviços" in the layout).
+      const navOffset = navBarHeight() + 100;
+      let current = 'home';
+      let bestTop = -Infinity;
+      for (const { id } of navLinks) {
         const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 100) {
-          setActiveSection(id);
-          break;
+        if (el && window.scrollY >= el.offsetTop - navOffset && el.offsetTop > bestTop) {
+          bestTop = el.offsetTop;
+          current = id;
         }
       }
+      setActiveSection(current);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -319,7 +328,14 @@ export default function Home() {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Land with the section title just below the fixed navbar instead of hidden under it.
+      const navHeight = navBarHeight();
+      const paddingTop = parseFloat(getComputedStyle(element).paddingTop) || 0;
+      const top =
+        id === 'home'
+          ? 0
+          : element.getBoundingClientRect().top + window.scrollY - navHeight + paddingTop - 32;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
     }
     setMobileMenuOpen(false);
     setActiveSection(id);
