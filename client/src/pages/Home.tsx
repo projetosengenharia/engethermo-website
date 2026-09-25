@@ -582,12 +582,14 @@ export default function Home() {
                   alt="Instalação Elétrica"
                   width={370}
                   height={247}
+                  loading="lazy"
                   className="rounded-xl shadow-2xl w-full h-52 object-cover"
                 />
                 <img
                   src="/images/about-hvac-orig_f3123e1b-1x.webp"
                   srcSet={srcSet1x2x('/images/about-hvac-orig_f3123e1b.webp')}
                   alt="HVAC Systems"
+                  loading="lazy"
                   width={370}
                   height={208}
                   className="rounded-xl shadow-2xl w-full h-52 object-cover mt-8"
@@ -671,6 +673,7 @@ export default function Home() {
                       alt={area.title}
                       width={area.imageWidth}
                       height={area.imageHeight}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1d1c1e] via-[#1d1c1e]/40 to-transparent" />
@@ -858,7 +861,7 @@ export default function Home() {
           {/* Logo + tagline */}
           <AnimateOnScroll variants={fadeUp}>
             <div className="flex flex-col items-center gap-2">
-              <img src={LOGO_URL_1X} alt="ENGETHERMO" width={251} height={155} className="h-20 object-contain" />
+              <img src={LOGO_URL_1X} alt="ENGETHERMO" width={251} height={155} loading="lazy" className="h-20 object-contain" />
               <p className="text-gray-500 text-xs tracking-wider">Engenharia de Excelência - Londrina, PR</p>
             </div>
           </AnimateOnScroll>
