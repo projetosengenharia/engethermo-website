@@ -430,7 +430,7 @@ export default function Home() {
         {/* Background */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: 'url(/images/hero-original_07af6494.jpg)' }}
+          style={{ backgroundImage: 'url(/images/hero-original_07af6494.webp)' }}
         />
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-[#1d1c1e]/80" />
